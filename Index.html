@@ -1,21 +1,31 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>iSTAD Learning - Professional Platform</title>
+    <title>EduVantage Learning</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Kantumruy+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Kantumruy+Pro:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+      rel="stylesheet"
+    />
 
     <style>
       :root {
         --brand-blue: #0948a7;
         --brand-orange: #ff9800;
+        --brand-gray: #dad0c1;
         --brand-teal: #49bbbd;
         --text-dark: #2d3748;
         --text-muted: #6b7280;
@@ -23,23 +33,26 @@
       }
 
       body {
-        font-family: 'Inter', 'Kantumruy Pro', -apple-system, sans-serif;
+        font-family:
+          "Inter",
+          "Kantumruy Pro",
+          -apple-system,
+          sans-serif;
         background-color: #ffffff;
         color: var(--text-dark);
         overflow-x: hidden;
         -webkit-font-smoothing: antialiased;
       }
 
-  
       .hero-wrapper {
         background-color: var(--brand-blue);
         position: relative;
-        padding-top: 110px; 
-        padding-bottom: 10rem; 
+        padding-top: 140px;
+        padding-bottom: 10rem;
       }
 
       .hero-title {
-        font-size: calc(1.8rem + 1.5vw); 
+        font-size: calc(1.8rem + 1.5vw);
         font-weight: 700;
         line-height: 1.25;
         letter-spacing: -0.02em;
@@ -49,12 +62,11 @@
         color: var(--brand-orange);
       }
 
-   
       .custom-navbar {
-        background-color: var(--brand-blue);
+        background-color: rgba(255, 255, 255, 0.9) !important;
         backdrop-filter: blur(10px);
         -webkit-backdrop-filter: blur(10px);
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
         transition: var(--transition-smooth);
       }
 
@@ -64,19 +76,18 @@
         object-fit: contain;
       }
 
-      .navbar-dark .navbar-nav .nav-link {
-        color: rgba(255, 255, 255, 0.8);
+      .custom-navbar .nav-link {
+        color: rgba(45, 55, 72, 0.8) !important;
         font-weight: 500;
         font-size: 0.95rem;
         transition: var(--transition-smooth);
       }
 
-      .navbar-dark .navbar-nav .nav-link:hover,
-      .navbar-dark .navbar-nav .nav-link.active {
-        color: #ffffff !important;
+      .custom-navbar .nav-link:hover,
+      .custom-navbar .nav-link.active {
+        color: var(--brand-blue) !important;
       }
 
-     
       .btn-custom {
         padding: 0.6rem 1.75rem;
         font-weight: 600;
@@ -86,13 +97,25 @@
       }
 
       .btn-login {
-        background-color: #ffffff;
-        color: var(--brand-blue);
-        border: 2px solid #ffffff;
+        background-color: var(--brand-blue);
+        color: #ffffff;
+        border: 2px solid var(--brand-blue);
       }
 
       .btn-login:hover {
         background-color: transparent;
+        color: var(--brand-blue);
+        transform: translateY(-2px);
+      }
+
+      .btn-signup {
+        background-color: transparent;
+        color: var(--brand-blue);
+        border: 2px solid var(--brand-blue);
+      }
+
+      .btn-signup:hover {
+        background-color: var(--brand-blue);
         color: #ffffff;
         transform: translateY(-2px);
       }
@@ -119,22 +142,20 @@
         color: var(--brand-orange);
       }
 
-     
       .image-container {
         position: relative;
         z-index: 10;
-        margin-bottom: -14rem; 
+        margin-bottom: -14rem;
       }
 
       .student-img {
-        max-height: 500px;
+        max-height: 450px;
         width: auto;
         object-fit: cover;
         border-radius: 2rem;
         box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
         border: 4px solid #ffffff;
       }
-
 
       .wave-divider {
         position: absolute;
@@ -143,6 +164,7 @@
         width: 100%;
         overflow: hidden;
         line-height: 0;
+        transform: translateY(1px);
         z-index: 1;
       }
 
@@ -157,7 +179,6 @@
         fill: #ffffff;
       }
 
-  
       .metric-number {
         font-size: 2.5rem;
         font-weight: 700;
@@ -205,33 +226,59 @@
         box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
       }
 
-      .bg-purple-icon { background-color: #6366f1; }
-      .bg-teal-icon { background-color: #14b8a6; }
-      .bg-blue-icon { background-color: #0ea5e9; }
+      .bg-purple-icon {
+        background-color: #6366f1;
+      }
+      .bg-teal-icon {
+        background-color: #14b8a6;
+      }
+      .bg-blue-icon {
+        background-color: #0ea5e9;
+      }
 
       @media (max-width: 991.98px) {
-        .hero-wrapper { padding-bottom: 4rem; padding-top: 90px; }
-        .image-container { margin-bottom: -6rem; margin-top: 2rem; }
-        .student-img { max-height: 350px; }
+        .hero-wrapper {
+          padding-bottom: 4rem;
+          padding-top: 110px;
+        }
+        .image-container {
+          margin-bottom: -6rem;
+          margin-top: 2rem;
+        }
+        .student-img {
+          max-height: 350px;
+        }
       }
     </style>
   </head>
   <body>
-
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top custom-navbar py-3" aria-label="Main Navigation">
+    <nav
+      class="navbar navbar-expand-lg navbar-light fixed-top custom-navbar py-3"
+      aria-label="Main Navigation"
+    >
       <div class="container">
-        <a class="navbar-brand d-flex align-items-center gap-2 fw-bold fs-4" href="#">
-          <img src="./picture/istad (1).png" alt="iSTAD Logo" class="navbar-logo" />
-          <span>ISTAD Learning</span>
+        <a
+          class="navbar-brand d-flex align-items-center gap-2 fw-bold fs-4 text-dark"
+          href="#"
+        >
+          <!-- <img src="./picture/istad (1).png" alt="EduVantage Logo" class="navbar-logo" /> -->
+          <span>EduVantage</span>
         </a>
 
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarContent"
+        >
           <span class="navbar-toggler-icon"></span>
         </button>
 
         <div class="collapse navbar-collapse" id="navbarContent">
           <ul class="navbar-nav ms-auto gap-4 align-items-center">
-            <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+            <li class="nav-item">
+              <a class="nav-link active" href="#">Home</a>
+            </li>
             <li class="nav-item"><a class="nav-link" href="#">Courses</a></li>
             <li class="nav-item"><a class="nav-link" href="#">Careers</a></li>
             <li class="nav-item"><a class="nav-link" href="#">About Us</a></li>
@@ -239,7 +286,7 @@
               <a class="btn btn-custom btn-login shadow-sm" href="#">Login</a>
             </li>
             <li class="nav-item">
-              <a class="btn btn-custom btn-outline-light" href="#">Sign Up</a>
+              <a class="btn btn-custom btn-signup" href="#">Sign Up</a>
             </li>
           </ul>
         </div>
@@ -248,49 +295,67 @@
 
     <header class="hero-wrapper text-white">
       <div class="container">
-        
         <section class="row align-items-center pt-2">
           <div class="col-12 col-lg-6 mb-4 mb-lg-0">
             <h1 class="hero-title mb-4">
-              <span class="text-highlight">Studying</span> Online is now much easier
+              <span class="text-highlight">Studying</span> Online is now much
+              easier
             </h1>
-            <p class="lead mb-4 text-white-50" style="max-width: 520px; font-size: 1.05rem; line-height: 1.6;">
-              iSTAD is an innovative platform designed to transform your educational experience through interactive and real-world technology application.
+
+            <p
+              class="lead mb-4 text-white-50"
+              style="max-width: 520px; font-size: 1.05rem; line-height: 1.6"
+            >
+              EduVantage is an innovative platform designed to transform your
+              educational experience through interactive and real-world
+              application.
             </p>
             <div class="d-flex flex-wrap align-items-center gap-4">
               <button class="btn btn-custom btn-join shadow">
                 Join for free
               </button>
-              <button class="btn btn-watch d-flex align-items-center gap-2 px-0">
-                <i class="bi bi-play-circle-fill fs-2 text-white"></i> 
+              <button
+                class="btn btn-watch d-flex align-items-center gap-2 px-0"
+              >
+                <i class="bi bi-play-circle-fill fs-2 text-white"></i>
                 <span>Watch how it works</span>
               </button>
             </div>
           </div>
 
           <div class="col-12 col-lg-6 text-center image-container">
-            <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&q=80&w=500" 
-                 alt="Student engaged in online learning" class="img-fluid student-img" />
+            <img
+              src="https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&q=80&w=500"
+              alt="Student engaged in online learning"
+              class="img-fluid student-img"
+            />
           </div>
         </section>
-
       </div>
 
       <div class="wave-divider">
-        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-          <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V0C26.9,4.75,55.05,10.3,83.82,15.11,169,29.35,257.92,68.22,321.39,56.44Z" class="wave-path"></path>
+        <svg
+          data-name="Layer 1"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1200 120"
+          preserveAspectRatio="none"
+        >
+          <path
+            d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V0C26.9,4.75,55.05,10.3,83.82,15.11,169,29.35,257.92,68.22,321.39,56.44Z"
+            class="wave-path"
+          ></path>
         </svg>
       </div>
     </header>
 
-    <main class="container" style="margin-top: 16rem;">
-      
+    <main class="container" style="margin-top: 16rem">
       <section class="text-center mb-5 pb-5">
         <h2 class="fw-bold mb-2 fs-1 text-dark">Our Success</h2>
-        <p class="text-muted mx-auto mb-5" style="max-width: 680px;">
-          Grounded in the values of quality education, our network continues to grow each year, delivering exceptional outcomes to students worldwide.
+        <p class="text-muted mx-auto mb-5" style="max-width: 680px">
+          Grounded in the values of quality education, our network continues to
+          grow each year, delivering exceptional outcomes to students worldwide.
         </p>
-        
+
         <div class="row g-4 justify-content-center mt-3">
           <div class="col-6 col-md-2.4 col-lg">
             <div class="metric-number">15K+</div>
@@ -320,49 +385,65 @@
           <span class="section-subtitle text-uppercase">All-In-One</span>
           <h2 class="fw-bold text-dark mt-1 fs-1">Cloud Software.</h2>
         </div>
-        <p class="text-muted mx-auto mb-5 pb-3" style="max-width: 600px;">
-          TOTC is one powerful online software suite that combines all the tools needed to run a successful school or campus.
+        <p class="text-muted mx-auto mb-5 pb-3" style="max-width: 600px">
+          TOTC is one powerful online software suite that combines all the tools
+          needed to run a successful school or campus.
         </p>
 
         <div class="row g-5 mt-4 justify-content-center">
           <div class="col-12 col-md-6 col-lg-4">
-            <div class="card feature-card h-100 text-center position-relative p-4">
+            <div
+              class="card feature-card h-100 text-center position-relative p-4"
+            >
               <div class="icon-badge bg-purple-icon">
                 <i class="bi bi-file-earmark-text"></i>
               </div>
-              <h3 class="fw-bold fs-4 mb-3 mt-2" style="color: #2d3e61;">Online Billing, Invoicing, & Contracts</h3>
+              <h3 class="fw-bold fs-4 mb-3 mt-2" style="color: #2d3e61">
+                Online Billing, Invoicing, & Contracts
+              </h3>
               <p class="text-muted card-text fs-6 px-2">
-                Simple and secure control of your organization’s financial strategy. Automated itemized invoices, receipts, and contract tracking.
+                Simple and secure control of your organization’s financial
+                strategy. Automated itemized invoices, receipts, and contract
+                tracking.
               </p>
             </div>
           </div>
 
           <div class="col-12 col-md-6 col-lg-4">
-            <div class="card feature-card h-100 text-center position-relative p-4">
+            <div
+              class="card feature-card h-100 text-center position-relative p-4"
+            >
               <div class="icon-badge bg-teal-icon">
                 <i class="bi bi-calendar3"></i>
               </div>
-              <h3 class="fw-bold fs-4 mb-3 mt-2" style="color: #2d3e61;">Easy Scheduling & Attendance Tracking</h3>
+              <h3 class="fw-bold fs-4 mb-3 mt-2" style="color: #2d3e61">
+                Easy Scheduling & Attendance Tracking
+              </h3>
               <p class="text-muted card-text fs-6 px-2">
-                Schedule dynamic synchronizations, reschedule alerts, and view live dashboards of student attendance records.
+                Schedule dynamic synchronizations, reschedule alerts, and view
+                live dashboards of student attendance records.
               </p>
             </div>
           </div>
 
           <div class="col-12 col-md-6 col-lg-4">
-            <div class="card feature-card h-100 text-center position-relative p-4">
+            <div
+              class="card feature-card h-100 text-center position-relative p-4"
+            >
               <div class="icon-badge bg-blue-icon">
                 <i class="bi bi-people"></i>
               </div>
-              <h3 class="fw-bold fs-4 mb-3 mt-2" style="color: #2d3e61;">Customer Tracking</h3>
+              <h3 class="fw-bold fs-4 mb-3 mt-2" style="color: #2d3e61">
+                Customer Tracking
+              </h3>
               <p class="text-muted card-text fs-6 px-2">
-                Automate customer metrics dashboard to measure growth, retention, and find out how your organization can grow.
+                Automate customer metrics dashboard to measure growth,
+                retention, and find out how your organization can grow.
               </p>
             </div>
           </div>
         </div>
       </section>
-
     </main>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
